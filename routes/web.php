@@ -11,9 +11,26 @@
 |
 */
 
+use Illuminate\Http\Request;
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/invoices', 'InvoicesController@index');
 Route::get('/invoices/{id}', 'InvoicesController@show');
+
+// Genres
+Route::get('/genres', 'GenresController@index');
+
+// Tracks
+Route::get('/tracks', 'TracksController@index');
+
+// Playlists
+Route::get('playlists', 'PlaylistsController@index');
+Route::get('/playlists/{id}', 'PlaylistsController@show');
+
+// testing query strings
+Route::get('/query', function(Request $request) {
+    dd($request->input('genre'));
+});
