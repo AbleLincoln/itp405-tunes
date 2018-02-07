@@ -5,6 +5,8 @@
 @endsection
 
 @section('content')
+  <a href="/playlists/new">Create new playlist</a>
+
   <ul>
     @foreach($playlists as $playlist)
     <li>
