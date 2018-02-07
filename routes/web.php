@@ -14,7 +14,7 @@
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage');
 });
 
 Route::get('/invoices', 'InvoicesController@index');
@@ -27,8 +27,8 @@ Route::get('/genres', 'GenresController@index');
 Route::get('/tracks', 'TracksController@index');
 
 // Playlists
-Route::get('playlists', 'PlaylistsController@index');
-Route::get('playlists/new', 'PlaylistsController@create');
+Route::get('/playlists', 'PlaylistsController@index');
+Route::get('/playlists/new', 'PlaylistsController@create');
 Route::get('/playlists/{id}', 'PlaylistsController@show');
 
 Route::post('/playlists', 'PlaylistsController@store');
